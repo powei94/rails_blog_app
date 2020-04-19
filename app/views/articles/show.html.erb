@@ -2,4 +2,10 @@
 <p><%= @article.body %></p>
 <%= link_to "Editar", edit_article_path(@article) %>
 <%= link_to "Borrar", article_path(@article), method: :delete, data: {confirm: "¿Realmente desea eliminar este artículo?"} %>
+
+<h3>Comentarios (<%= @article.comments.size %>)</h3>
+<%= render partial: 'articles/comment', collection: @article.comments %>
+
+<%= render partial: 'comments/form'%>
+
 <%= link_to "<< Volver a lista de artículos", articles_path %>

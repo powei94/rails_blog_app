@@ -1,0 +1,8 @@
+es:
+  hello: "Hola mundo"
+  datetime:
+    distance_of_time_in_words:
+      short:
+        about_x_hours:
+          one: 'una hora'
+          other: '%{count} horas'
