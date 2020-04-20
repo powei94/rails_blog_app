@@ -12,5 +12,14 @@
   <body>
     <p class="flash"><%= flash.notice%></p>
     <%= yield %>
+    <hr>
+    <h6>
+      <% if logged_in? %>
+        <%= "Conectado como #{current_user.email}" %>
+        <%= link_to "(Cerrar Sesión)", logout_path%>
+      <% else%>
+        <%= link_to "(Iniciar Sesión)", login_path%>
+      <%end%>
+    </h6>
   </body>
 </html>

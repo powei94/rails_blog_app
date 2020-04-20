@@ -36,6 +36,10 @@ gem 'jbuilder', '~> 2.5'
 # Se agrega gema paperclip
 gem 'paperclip'
 
+# Se agrega gema sorcery para autenticación
+gem 'sorcery'
+
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

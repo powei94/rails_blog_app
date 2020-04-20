@@ -9,9 +9,10 @@
     <p><%= image_tag @article.image.url%></p>
 <%end%>
 <p><%= @article.body %></p>
-<%= link_to "Editar", edit_article_path(@article) %>
-<%= link_to "Borrar", article_path(@article), method: :delete, data: {confirm: "¿Realmente desea eliminar este artículo?"} %>
-
+<% if logged_in? %>
+    <%= link_to "Editar", edit_article_path(@article) %>
+    <%= link_to "Borrar", article_path(@article), method: :delete, data: {confirm: "¿Realmente desea eliminar este artículo?"} %>
+<% end %>
 <h3>Comentarios (<%= @article.comments.size %>)</h3>
 <%= render partial: 'articles/comment', collection: @article.comments %>
 
