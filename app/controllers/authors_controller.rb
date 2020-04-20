@@ -3,7 +3,7 @@ class AuthorsController < ApplicationController
   # Filtro para los métodos new y create, solo si no existen usuarios
   # o hay alguno logueado pueden acceder a los métodos
   before_action :zero_authors_or_authenticated, only: [:new, :create]
-  before_filter :require_login, except: [:new, :index, :create]
+  before_action :require_login, except: [:new, :index, :create]
 
   # Check para saber si hay cero o algun usuario logueado
   def zero_authors_or_authenticated
